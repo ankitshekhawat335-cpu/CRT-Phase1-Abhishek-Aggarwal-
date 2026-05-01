@@ -134,34 +134,44 @@ int main() {
 }
 
 
-//Program 8
-//Area of shapes
-
-#include <iostream>
+ //Program 8
+ //Area of Shapes
+ 
+ #include <iostream>
 using namespace std;
 
 int main() {
     int choice;
-    cout << "1.Circle  2.Rectangle  3.Triangle\n";
+    float r, l, b, area;
+
+    cout << "1. Circle\n2. Rectangle\n3. Square\n";
+    cout << "Enter choice: ";
     cin >> choice;
 
-    if (choice == 1) {
-        float r;
-        cin >> r;
-        cout << 3.14 * r * r;
-    }
-    else if (choice == 2) {
-        float l, b;
-        cin >> l >> b;
-        cout << l * b;
-    }
-    else if (choice == 3) {
-        float base, height;
-        cin >> base >> height;
-        cout << 0.5 * base * height;
-    }
-    else {
-        cout << "Invalid choice";
+    switch(choice) {
+        case 1:
+            cout << "Enter radius: ";
+            cin >> r;
+            area = 3.14 * r * r;
+            cout << "Area of Circle = " << area;
+            break;
+
+        case 2:
+            cout << "Enter length and breadth: ";
+            cin >> l >> b;
+            area = l * b;
+            cout << "Area of Rectangle = " << area;
+            break;
+
+        case 3:
+            cout << "Enter side: ";
+            cin >> l;
+            area = l * l;
+            cout << "Area of Square = " << area;
+            break;
+
+        default:
+            cout << "Invalid choice";
     }
 
     return 0;
