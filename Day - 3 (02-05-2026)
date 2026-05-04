@@ -78,7 +78,32 @@ int main() {
 }
 
 
-//Program 7 -- Prime Number
+//  Program -- FIBONACCI SERIES 
+//  Generate the first N terms of the sequence
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+     int n;
+     cin >> n;
+     int c;
+    
+     int a = 0;
+     int b = 1;
+    
+     for(int i = 0; i < n; i++) {
+         cout << a << " ";
+         c = a + b;
+         a = b;
+         b = c;
+     }
+     return 0;
+}
+
+
+//Program 8 -- Prime Number
 
 #include <iostream>
 using namespace std;
@@ -107,8 +132,26 @@ int main() {
 }
 
 
+//Program 9 -- Multiplication Table
 
-//Program 8 -- smart phone unlock
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+
+    cout << "Enter a number: ";
+    cin >> num;
+
+    for (int i = 1; i <= 10; i++) {
+        cout << num << " x " << i << " = " << num * i << endl;
+    }
+
+    return 0;
+}
+
+
+//Program 10 -- smart phone unlock
 
 #include <iostream>
 using namespace std;
@@ -122,3 +165,78 @@ using namespace std;
      } while(password != 8520);
      cout << " unlock";
  }
+
+
+//Program 11 -- CountDown Timer
+
+#include <iostream>
+#include <unistd.h>  // for sleep()
+using namespace std;
+
+int main() {
+    int time;
+
+    cout << "Enter countdown time (in seconds): ";
+    cin >> time;
+
+    while (time > 0) {
+        cout << "Time left: " << time << " seconds" << endl;
+        sleep(1);  // wait for 1 second
+        time--;
+    }
+
+    cout << "Time's up!" << endl;
+
+    return 0;
+}
+
+
+//  Program 12 -- WATER JAR FILLER 
+//  Keep adding water until 500ml is reached
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int currentWater = 0;
+    int add;
+    while(currentWater < 500){
+        cout << "Glass has " << currentWater << "ml. How much to add? ";
+        cin >> add;
+        currentWater = currentWater + add;
+    }
+    cout << "Glass is full with water: " << currentWater << "ml" << endl;
+    
+    return 0;
+}
+
+
+//Program 13 -- ATM PIN retry system
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int correctPin = 1234;
+    int enteredPin;
+    int attempts = 0;
+
+    while (attempts < 3) {
+        cout << "Enter your ATM PIN: ";
+        cin >> enteredPin;
+
+        if (enteredPin == correctPin) {
+            cout << "Access Granted!\n";
+            break;
+        } else {
+            cout << "Wrong PIN!\n";
+            attempts++;
+        }
+    }
+
+    if (attempts == 3) {
+        cout << "Card Blocked! Too many wrong attempts.\n";
+    }
+
+    return 0;
+}
