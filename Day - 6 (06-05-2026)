@@ -1,0 +1,144 @@
+// Program -1 -- Coffee Bill
+
+#include <iostream>
+using namespace std;
+
+int Billing(int a){
+    return a * 30;
+}
+
+int main() {
+    int n;
+    cin >> n;
+   cout << Billing(n);
+}
+
+// Program -2 -- discount 
+
+#include <iostream>
+using namespace std;
+
+int discount (int amount){
+    return amount - (amount * 0.10);
+}
+int main() {
+    int n;
+    cin >> n;
+    cout << discount(n);
+}
+
+
+// Program -3 -- Smart AC Remorte
+
+#include <iostream>
+using namespace std;
+
+void setTemperature(){
+    cout << "temp set to 22°C"<< "\n";
+}
+
+void setTemperature(double temp){
+    cout << "temp set to " << temp << "°C" << "\n"; 
+}
+
+void setTemperature(string mode){
+    if(mode == "Eco"){
+        cout << "temp set to 24°C"<< "\n";
+    }else if (mode == "turbo"){
+        cout << "temp set to 18°C"<< "\n";
+    }
+}
+int main() {
+    setTemperature();
+    setTemperature(20.5);
+    setTemperature("Eco");
+}
+
+
+// Program -4 -- Pointers
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 10;
+    int *ptr1 = &a;
+    
+    int b = 5;
+    int *ptr2 = &b;
+    
+    int c = a + b;
+    // int c = *ptr1 + *ptr2;
+    cout << c;
+}
+
+
+// Program -5 -- Swapping 2 variable's values using Pointers and functions
+ 
+ #include <iostream>
+using namespace std;
+ 
+void swapNumber(int *ptr1, int *ptr2){
+    int temp = *ptr1;
+    *ptr1 = *ptr2;
+    *ptr2 = temp;
+}
+
+int main() {
+    int a, b;
+    cin >> a;
+    cin >> b;
+    swapNumber(&a, &b);
+    cout << a << " " << b;
+}
+
+
+// Program -6 -- Classes / Objects
+
+#include <iostream>
+using namespace std;
+
+class Student{
+    
+public:
+    string name;
+    int age;
+    
+void introduce() {
+        cout << "Hi there name is " << name << " and age is " << age << "\n";
+    }
+};
+
+int main() {
+    Student s1, s2;
+    s1.name = "Ankit";
+    s1.age = 24;
+    s2.name = "Saurab";
+    s2.age = 23;
+    s1.introduce();
+    s2.introduce();
+}
+
+
+// Program -7 -- Access Specifier
+// Types -- 7.1 -- public
+//          7.2 -- private
+//          7.3 -- protected
+
+
+// 7.1 -- public
+
+#include <iostream>
+using namespace std;
+
+class publicPark{
+public:
+    void enter(){
+        cout << "Anyone can  enter...";
+    }
+};
+int main(){
+    publicPark p;
+    p.enter();
+}
+
