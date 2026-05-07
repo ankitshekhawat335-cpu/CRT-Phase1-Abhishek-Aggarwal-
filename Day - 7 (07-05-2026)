@@ -18,3 +18,149 @@ int main() {
    updatebyReference(original);
    cout << original;
 }
+
+
+// Program -2 -- Access Specifier
+// private
+
+#include <iostream>
+using namespace std;
+
+class BankAccount{
+    private: 
+    int balance = 5000;
+    
+    public:
+    void showbalance() {
+        cout << balance;
+    }
+};
+int main() {
+    BankAccount obj1;
+    obj1.showbalance();
+}
+
+
+// Program -3 -- protected Access Specifier
+
+#include <iostream>
+using namespace std;
+
+class Parent {
+    protected:
+    int secretCode = 2345;
+};
+
+class Child : Parent{
+    public:
+    void accessLocker(){
+    cout << secretCode;    
+    }
+};
+
+int main() {
+    Child obj1;
+    obj1.accessLocker();
+}
+
+
+// Program -4 -- Constructor 
+// 4.1 -- Parameterized Constructor
+
+#include <iostream>
+using namespace std;
+
+class Student{
+
+public:
+    string name;
+    int age;
+    
+    Student(string StudentName, int StudentAge){
+    name = StudentName;
+    age = StudentAge;
+}
+
+void introduce(){
+    cout << "Hi there, this person name is " << name << " and his age is " << age << "\n";
+    }
+};
+
+int main() {
+    Student s1("Ankit",24);
+    Student s2("Saurab",23);
+    s1.introduce();
+    s2.introduce();
+}
+
+// 4.2 -- default Constructor
+
+#include <iostream>
+using namespace std;
+
+class wifiConnection {
+    public:
+    string networkName;
+    int password;
+    
+    wifiConnection() {
+        networkName = "Ankit";
+        password = 2345;
+    }
+    
+void showDetails() {
+    cout << networkName << " " << password;
+    }
+};
+
+int main() {
+    wifiConnection obj1;
+    obj1.showDetails();
+}
+
+
+// Program -5 -- Constructor Overloading
+
+#include<iostream>
+using namespace std;
+
+class Rectangle {
+    public:
+    int length;
+    int width;
+    
+    // Constructor -- 1 (default Constructor)
+    
+    Rectangle() {
+        length = 10;
+        width = 20;
+    }
+    
+    // Constructor -2 (Parameterized Constructor)
+    
+    Rectangle(int l){
+        length = l;
+        width = 30;
+    }
+    
+    // Constructor -3 (Parameterized Constructor)
+    
+    Rectangle(int l, int b){
+        length = l;
+        width = b;
+    }
+    
+void area() {
+    cout << length * width << "\n";
+}    
+};
+int main() {
+    Rectangle r1;
+    r1.area();
+    Rectangle r2(5);
+    r2.area();
+    Rectangle r3(5,20);
+    r3.area();
+}
+
+
