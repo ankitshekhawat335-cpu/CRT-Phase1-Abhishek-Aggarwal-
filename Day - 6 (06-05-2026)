@@ -18,13 +18,16 @@ int main() {
 #include <iostream>
 using namespace std;
 
-int discount (int amount){
-    return amount - (amount * 0.10);
+int discount(int amount, int discountamount){
+    discountamount = (amount * discountamount)/100;
+    return amount - discountamount;
 }
 int main() {
     int n;
+    int discountPercentage;
     cin >> n;
-    cout << discount(n);
+    cin >> discountPercentage;
+    cout << discount(n, discountPercentage);
 }
 
 
