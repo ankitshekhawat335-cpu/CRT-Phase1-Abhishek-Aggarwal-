@@ -1,0 +1,20 @@
+// Program -1 -- call by value or reference
+
+#include <iostream>
+using namespace std;
+
+void updatebyValues(int a){
+    a = 500;
+}
+
+void updatebyReference(int &a){
+    a = 500;
+}
+
+int main() {
+   int original = 100;
+   updatebyValues(original);
+   cout << original << "\n";
+   updatebyReference(original);
+   cout << original;
+}
