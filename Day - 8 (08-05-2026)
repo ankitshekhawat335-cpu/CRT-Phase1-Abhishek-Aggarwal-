@@ -167,5 +167,3 @@ int main() {
     obj1.setBalance(5000);
     cout << obj1.getbalance();
 }
-
-
