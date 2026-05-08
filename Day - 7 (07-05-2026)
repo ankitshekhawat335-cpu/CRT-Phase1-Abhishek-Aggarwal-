@@ -162,5 +162,3 @@ int main() {
     Rectangle r3(5,20);
     r3.area();
 }
-
-
