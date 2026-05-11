@@ -65,9 +65,7 @@ int main() {
 }
 
 
-Leet Code
-
-//  Two Sum
+Leet Code -1  Two Sum
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -87,7 +85,7 @@ public:
 };
 
 
-//Majority Element
+Leet code - 169 -- Majority Element
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
