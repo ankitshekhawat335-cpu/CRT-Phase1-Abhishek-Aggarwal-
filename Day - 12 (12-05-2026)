@@ -36,3 +36,45 @@ int main(){
 
     return 0;
 }
+
+or
+
+#include <iostream>
+using namespace std;
+
+int factorial(int n){    
+    
+    if(n == 0 || n == 1){
+        return 1;
+    }
+    return n * factorial(n - 1);   
+}
+
+int main() {
+    cout << factorial(5);
+}
+
+// 3 Fibonacci through Recursion
+
+#include <iostream>
+using namespace std;
+
+int fibo(int n) {
+    // base condition
+    if(n == 0) {
+        return 0;
+    }
+    if(n == 1) {
+        return 1;
+    }
+    // logic
+    return fibo(n - 1) + fibo(n - 2);
+}
+int main() {
+    cout << fibo(4);
+}
+
+
+// LeetCode 70.
+// Climbing Stairs
+
