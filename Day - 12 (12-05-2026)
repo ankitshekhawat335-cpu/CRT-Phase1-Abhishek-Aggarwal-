@@ -1,0 +1,38 @@
+// 1  Recursion Function
+
+#include <iostream>
+using namespace std;
+
+void printNumber(int n) {
+    
+    if(n > 5) {
+        return;
+    }
+    cout << n << " ";
+    printNumber(n + 1);
+}
+int main()
+{
+    printNumber(1);
+}
+
+// 2  Factorial of a printNumber
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int num, fact = 1;
+
+    cout << "Enter a number: ";
+    cin >> num;
+
+    for(int i = 1; i <= num; i++)
+    {
+        fact = fact * i;
+    }
+
+    cout << "Factorial = " << fact;
+
+    return 0;
+}
