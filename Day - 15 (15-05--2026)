@@ -1,0 +1,114 @@
+// Program -1 -- Reverse a Array  using stack 
+
+#include <iostream>
+#include <stack>
+using namespace std;
+
+int main()
+{
+    stack<int> s;
+    int n, value;
+
+    cout << "Enter how many elements: ";
+    cin >> n;
+
+    // Push elements into stack
+    for(int i = 1; i <= n; i++)
+    {
+        cout << "Enter element: ";
+        cin >> value;
+
+        s.push(value);
+    }
+
+    // Display stack elements
+    cout << "Stack elements are: ";
+
+    while(!s.empty())
+    {
+        cout << s.top() << " ";
+        s.pop();
+    }
+
+    return 0;
+}
+
+
+LeetCode 344 -- Reverse String using stack
+class Solution {
+public:
+    void reverseString(vector<char>& s) {
+
+        stack<char> st;
+
+        // Push all characters into stack
+        for(int i = 0; i < s.size(); i++) {
+            st.push(s[i]);
+        }
+
+        // Pop characters back into vector
+        for(int i = 0; i < s.size(); i++) {
+            s[i] = st.top();
+            st.pop();
+        }
+    }
+};
+
+
+LeetCode  20 -- Valid Parentheses
+class Solution {
+public:
+    bool isValid(string s) {
+
+        stack<char> st;
+
+        for(char ch : s) {
+
+            if(ch == '(' || ch == '[' || ch == '{')
+                st.push(ch);
+
+            else {
+
+                if(st.empty()) return false;
+
+                if((ch == ')' && st.top() != '(') ||
+                   (ch == ']' && st.top() != '[') ||
+                   (ch == '}' && st.top() != '{'))
+                    return false;
+
+                st.pop();
+            }
+        }
+
+        return st.empty();
+    }
+};
+
+
+GFG --Next Greater Element
+class Solution {
+  public:
+    vector<int> nextLargerElement(vector<int>& arr) {
+        int n = arr.size();
+        vector<int> ans(n);
+        stack<int> st;
+        // Traverse from right to left
+        for(int i = n - 1; i >= 0; i--) {
+            // Remove smaller or equal elements
+            while(!st.empty() && st.top() <= arr[i]) {
+                st.pop();
+            }
+            // Next greater element
+            if(st.empty()) {
+                ans[i] = -1;
+            }
+            else {
+                ans[i] = st.top();
+            }
+            // Push current element
+            st.push(arr[i]);
+        }
+        
+        return ans;
+    }
+};
